@@ -33,7 +33,6 @@
                             @else
                                 女性
                             @endif
-                            <!--<input type="text" name="gender" value="{{ $contact_for_db['gender'] }}" readonly/> -->
                         </td>
                     </tr>
                     <tr class="confirm-table__row">
