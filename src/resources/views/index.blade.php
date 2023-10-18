@@ -14,7 +14,7 @@
             <h2>お問い合わせ</h2>
         </div>
 
-        <form class="form" action="/contacts/confirm" method="post">
+        <form class="form" action="{{ route('form.confirm') }}" method="post">
             @csrf
             <div class="form__group">
                 <div class="form__group-label">
@@ -25,16 +25,21 @@
                         <div class="form__input--family">
                             <input type="text" name="last_name" value="{{ old('last_name') }}">
                             <p class="form__ex">例）山田</p>
+                                <div class="form__error">
+                                @error('last_name')
+                                {{ $message }}
+                                @enderror
+                                </div>
                         </div>
                         <div class="form__input--given">
                             <input type="text" name="first_name" value="{{ old('first_name') }}">
                             <p class="form__ex">例）太郎</p>
+                                <div class="form__error">
+                                @error('first_name')
+                                {{ $message }}
+                                @enderror
+                                </div>
                         </div>
-                    </div>
-                    <div class="form__error">
-                        @error('last_name', 'first_name')
-                        {{ $message }}
-                        @enderror
                     </div>
                 </div>
             </div>
@@ -138,6 +143,6 @@
             </div>
         </form>
     </div>
-</main>    
+</main>
 </body>
 </html>
